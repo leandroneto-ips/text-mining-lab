@@ -8,7 +8,7 @@ let router = express.Router();
  */
 
 router.get('/home', (req, res, next) => {
-    console.log('routing to /home');
+    // console.log('routing to /home');
     res.render('home');
 });
 

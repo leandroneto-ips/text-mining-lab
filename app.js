@@ -4,11 +4,18 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const memoryMonitor = require('./utils/memoryMonitor');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var corpusRouter = require('./routes/corpus');
 
 var app = express();
+
+// Memory usage tracking
+
+memoryMonitor.trackMemory();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
