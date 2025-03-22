@@ -1,0 +1,70 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/* Apply theme colors */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+  --border-color: #ddd;
+  --hover-bg: #ecf0f1;
+}
+
+/* Table container for responsiveness */
+.table-container {
+  overflow-x: auto;
+  max-width: 100%;
+  padding: 10px;
+}
+
+/* Styled table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table headers */
+thead {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: left;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+td {
+  text-align: justify;
+}
+
+/* Alternate row colors */
+tbody tr:nth-child(even) {
+  background-color: var(--background-color);
+}
+
+/* Hover effect */
+tbody tr:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Responsive: Make table scrollable */
+@media (max-width: 768px) {
+  th, td {
+      padding: 8px;
+      font-size: 14px;
+  }
+}
+

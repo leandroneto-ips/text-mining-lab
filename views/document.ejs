@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Review Details</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'> <!-- Link to your stylesheet -->
+</head>
+<body>
+    <div class='container'>
+        <h1>Review Details</h1>
+        
+        <div class='record-details'>
+            <p><strong>ID Corpus:</strong> <%= document.id %></p>
+            <p><strong>ID Review:</strong> <%= document.id_hotelreviews %></p>
+            <p><strong>Review:</strong></p>
+            <p class='review-text'><%= document.review %></p>
+            <p><strong>Score:</strong> <%= document.score %></p>
+        </div>
+
+        <a href='javascript: history.back()' class='back-button'>Back to List</a>
+    </div>
+</body>
+</html>

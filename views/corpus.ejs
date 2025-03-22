@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= label %> Corpus List</title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <body>
+        <h1><%= label %> Corpus List</h1>
+        <p><%= corpusList.length %> records</p>
+        <a href='javascript: history.back()' class='back-button'>Back to Home</a>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Corpus</th>
+                        <th><strong>ID Review</strong></th>
+                        <th>Review</th>
+                        <th><strong>Score</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% corpusList.forEach((corpus) => { %>
+                    <tr>
+                        <td><div><a href='/router/document/<%= corpus.id %>'><%= corpus.id %></a></div></td>
+                        <td><strong><%= corpus.id_hotelreviews %></strong></td>
+                        <td><div><%= corpus.review %></div></td>
+                        <td><strong><%= corpus.score %></strong></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
