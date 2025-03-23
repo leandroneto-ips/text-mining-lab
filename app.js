@@ -9,6 +9,7 @@ const memoryMonitor = require('./utils/memoryMonitor');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var corpusRouter = require('./routes/corpus');
+var trainingSetRouter = require('./routes/trainingset');
 
 var app = express();
 
@@ -29,7 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/routes', corpusRouter);
+app.use('/corpus', corpusRouter);
+app.use('/trainingset', trainingSetRouter);
 // app.use('/corpus', corpusRouter);
 // app.use('/document', corpusRouter);
 

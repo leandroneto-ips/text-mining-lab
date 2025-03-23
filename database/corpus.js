@@ -33,17 +33,37 @@ async function getNegativeReviewsOriginalSet(numberOfRows = 100) {
     return negativeOriginalSet;
 }
 
-async function getCorpus(label) {
-    let sqlQuery = `
-    select *
-    from corpus
-    where label = ?;
-    `
+async function getCorpus(label, limit) {
+    
     let connection = await mysql.createConnection(DB_CONFIG);
     await connection.connect();
-    const [corpusList, fields] = await connection.query(sqlQuery, [label]);
-    await connection.end();
-    return corpusList
+
+    if(limit > 0) {
+        let sqlQuery = `
+        select *
+        from corpus
+        where label = ?
+        limit ?;
+        `
+        const [corpusList, fields] = await connection.query(sqlQuery, [label, limit]);
+        await connection.end();
+        return corpusList;
+        
+    } else {
+        let sqlQuery = `
+        select *
+        from corpus
+        where label = ?;
+        `
+        const [corpusList, fields] = await connection.query(sqlQuery, [label]);
+        await connection.end();
+        return corpusList;
+    }
+
+
+    
+
+
 }
 
 const getCorpusById = async (id) => {

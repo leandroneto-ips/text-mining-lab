@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= label %> Training Set</title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <body>
+        <h1><%= label %> Training Set</h1>
+        <p><%= trainingSetList.length %> records</p>
+        <a href='javascript: history.back()' class='back-button'>Back to Home</a>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Training Set</th>
+                        <th><strong>ID Corpus</strong></th>
+                        <th>Text</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% trainingSetList.forEach((trainingSet) => { %>
+                    <tr>
+                        <td><div><%= trainingSet.id %></div></td>
+                        <td><strong><%= trainingSet.id_corpus %></strong></td>
+                        <td><div><%= trainingSet.text %></div></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
